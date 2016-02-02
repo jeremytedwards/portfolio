@@ -1,5 +1,28 @@
 /* header */
 
+
 /* body main */
+body {
+  padding: 1em;
+}
+
+main {
+  margin: auto;
+  width: 80%;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+}
+
+.initHide {
+  display: none;
+}
+
 
 /* footer */
+footer {
+  margin: auto;
+  width: 80%;
+}
