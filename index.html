@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Portfolio Site</title>
+    <link rel="stylesheet"  href="css/styles.css">
+  </head>
+  <body>
+    <main>
+      <!-- header -->
+      <header>
+        <h1>Project Site for Jeremy Edwards</h1>
+        <a href="https://github.com/jeremytedwards/" class="" target="_blank"><img src="img/github_icon.png" height="50px" /></a></li>
+        <a href="mailto:jeremytedwards@gmail.com?subject=Found your cool portfolio!&body=Hi, I found your protfolio and wanted to send you a message let you know that..." class=""><img src="img/mail_icon.png" height="50px" /></a></li>
+      </header>
+
+      <!-- portfolio -->
+      <section id="projects">
+        <!-- projects to load in here -->
+        <project class="initHide">
+            <h1>Project Title</h1>
+            <div class="author">First LastName</div>
+            <div class="pubDate">Published <time pubdate datetime="2000-01-01">Pubish Time</time></div>
+        </project>
+      </section>
+    </main>
+
+    <footer>
+      <!-- footer -->
+      <section id="footer">
+        <p>&copy; 2016 The World Wide Web</p>
+      </section>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="proj/data.js"></script>
+    <script src="js/buildProjData.js"></script>
+
+
+  </body>
+</html>
