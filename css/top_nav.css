@@ -1,6 +1,6 @@
 
 /* Style The Dropdown Button */
-.dropbtn {
+.icon-menu {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -41,6 +41,6 @@
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
+.dropdown:hover .icon-menu {
     background-color: #3e8e41;
 }
