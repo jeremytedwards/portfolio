@@ -1,16 +1,6 @@
 var projects = [];
 
 function Project(data) {
-  // Sample node from 'proj/data.js'
-  // {
-  //   title:       'Project 01',
-  //   category:    'web',
-  //   author:      'Jeremy Edwards',
-  //   authorUrl:   'http://www.sample.com/project-01',
-  //   publishedOn: '2016-02-01',
-  //   body:        '<p>This will be the first project in the portfolio</p>'
-  // },
-
   this.title = data.title;
   this.category = data.category;
   this.author = data.author;
@@ -21,9 +11,6 @@ function Project(data) {
 
 Project.prototype.toHtml = function() {
   var $newProject = $('project.initHide').clone();
-
-  console.log($('project.initHide'));
-  console.log(this);
 
   // Sets the project title
   $newProject.find('h1').text(this.title);
@@ -42,8 +29,6 @@ Project.prototype.toHtml = function() {
 
   // It's ok to show if we have if we have content in the project data
   $newProject.removeClass('initHide');
-
-  console.log($newProject);
 
   return $newProject;
 };

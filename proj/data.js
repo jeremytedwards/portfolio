@@ -23,4 +23,28 @@ var projData = [
     publishedOn: '2016-02-02',
     body:        '<p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><img src="proj/img-proj/hand_with_ten_of_diamonds_black_white_line_art-555px.png"><p>This will be the second project in the portfolio</p>'
   },
+  {
+    title:       'Project 04',
+    category:    'web',
+    author:      'Jeremy Edwards',
+    authorUrl:   'http://www.sample.com/project-01',
+    publishedOn: '2016-02-04',
+    body:        '<p>This will be the first project in the portfolio</p><p>This will be the first project in the portfolio</p><p>This will be the first project in the portfolio</p><p>This will be the first project in the portfolio</p><img src="proj/img-proj/lion-svg.svg"></img><p>This will be the first project in the portfolio</p>'
+  },
+  {
+    title:       'Project 06',
+    category:    'web',
+    author:      'Jeremy Edwards',
+    authorUrl:   'http://www.sample.com/project-03',
+    publishedOn: '2016-02-06',
+    body:        '<p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p><img src="proj/img-proj/che_guevara_black_white_line_art-555px.png"><p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p>'
+  },
+  {
+    title:       'Project 05',
+    category:    'web',
+    author:      'Jeremy Edwards',
+    authorUrl:   'http://www.sample.com/project-02',
+    publishedOn: '2016-02-05',
+    body:        '<p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><p>This will be the second project in the portfolio</p><img src="proj/img-proj/hand_with_ten_of_diamonds_black_white_line_art-555px.png"><p>This will be the second project in the portfolio</p>'
+  },
 ];

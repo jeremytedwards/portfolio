@@ -36,10 +36,17 @@
 }
 
 /* Change color of dropdown links on hover */
-.main-nav a:hover {background-color: #f1f1f1}
+.main-nav a:hover {
+  background-color: #f1f1f1;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .main-nav {
+    display: block;
+}
+
+/* Hide the menu after selection */
+.dropdown: .main-nav {
     display: block;
 }
 

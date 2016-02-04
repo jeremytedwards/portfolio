@@ -1,5 +1,6 @@
 var projectView = {};
 
+// TODO: Populate the filters
 // projectView.populateFilters = function() {
 //   $('article').each(function() {
 //     if (!$(this).hasClass('template')) {
@@ -12,7 +13,7 @@ var projectView = {};
 //   });
 // };
 //
-// todo: add category filter
+// TODO: add category filter
 // projectView.handleCategoryFilter = function() {
 //   $('#category-filter').on('change', function() {
 //     if ($(this).val()) {
@@ -28,22 +29,21 @@ var projectView = {};
 projectView.handleTopNav = function(e) {
   $('.main-nav').on('click', '.tab' , function(){
     var $navItem = $(this).attr('data-content');
-    $('.tab-content').slideUp();
-    $('#' + $navItem).slideDown();
+    $('.tab-content').slideUp('fast');
+    $('#' + $navItem).slideDown('fast');
   });
-  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
+  $('.main-nav .tab:first').click();
 };
 
 projectView.setTeasers = function() {
-  $('.project-body *:nth-of-type(n+2)').slideUp(); // Hide elements beyond the first 2 in any artcile body.
+  $('.project-body *:nth-of-type(n+2)').slideUp('fast');
 
   $('.read-on').on('click', function(e){
     e.preventDefault();
-    $(this).parent().find('.project-body *:nth-of-type(n)').slideDown();
+    $(this).parent().find('.project-body *:nth-of-type(n)').slideDown('fast');
   });
 };
 
-// DONE: Call all of the above functions, once we are sure the DOM is ready.
 $(function(){
   // projectView.populateFilters();
   // projectView.handleCategoryFilter();
