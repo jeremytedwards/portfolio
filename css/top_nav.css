@@ -18,6 +18,9 @@
 /* Dropdown Content (Hidden by Default) */
 .main-nav {
     display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;

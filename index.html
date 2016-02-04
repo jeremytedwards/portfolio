@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Portfolio Site</title>
+
+    <meta name=”viewport” content=”width=device-width, initial-scale=1”>
+
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/top_nav.css">
     <link rel="stylesheet" href="css/icons.css">
@@ -12,11 +16,12 @@
       <nav>
         <div class="dropdown">
         <button class="icon-menu"> Menu</button>
-          <div class="main-nav">
-            <a class="tab" data-content="about" href="#">About</a>
-            <a class="tab" data-content="intro" href="#">Intro</a>
-            <a class="tab" data-content="projects" href="#">Projects</a>
-            <a class="tab" data-content="contact" href="#">Contact</a>
+          <ul class="main-nav">
+            <li class="tab" data-content="about"><a href="#">About</a></li>
+            <li class="tab" data-content="intro"><a href="#">Intro</a></li>
+            <li class="tab" data-content="projects"><a href="#">Projects</a></li>
+            <li class="tab" data-content="contact"><a href="#">Contact</a></li>
+          </ul>
           </div>
         </div>
       </nav>
