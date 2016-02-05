@@ -22,6 +22,7 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- TODO: untilize responsive framework like foundation -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/top_nav.css">
@@ -30,15 +31,13 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
     <!-- Handlebars.js: Project Template -->
     <script id="article-template" type="text/x-handlebars-template">
       <project class="clearfix" data-author="{{author}}" data-category="{{category}}">
-        <header>
           <h1>{{title}}</h1>
           <div class="author">
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
-            Publication: {{daysAgo}}
+            {{publishStatus}}
           </div>
-          <section class="project-body">{{body}}</section>
+            <section class="project-body">{{{body}}}</section>
           <a href="#" class="read-on">Read on &rarr;</a>
-        </header>
       </article>
     </script>
 
@@ -73,9 +72,7 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
       </section>
 
       <section id="projects" class="tab-content">
-        <!--Start: Project Template -->
-
-        <!-- END: Project Template -->
+        <!--Insert: Handlebars: Project Template -->
       </section>
 
       <section id="contact" class="tab-content">

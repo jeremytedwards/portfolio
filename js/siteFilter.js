@@ -31,8 +31,16 @@ projectView.handleTopNav = function(e) {
     var $navItem = $(this).attr('data-content');
     $('.tab-content').slideUp('fast');
     $('#' + $navItem).slideDown('fast');
+
+    // if this is the 'projects' tab expand the first project section
+    if ($navItem === 'projects') {
+      $('.read-on')[0].click();
+    };
   });
-  $('.main-nav .tab:first').click();
+
+  // Set the initial state of the main block
+  // currently set to: projects
+  $('.main-nav .tab')[2].click();
 };
 
 projectView.setTeasers = function() {
