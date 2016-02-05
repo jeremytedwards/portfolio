@@ -1,19 +1,3 @@
-<!--
-## User Stories: MVP
-  DONE: As a visitor, I want the images to be responsive, so that content stays properly proportioned.
-  DONE: As a visitor, I want the viewport properly sized, so that content fits all the size I have available.
-  DONE: As a visitor, I want the primary nav to be responsive, so that I can get around using any device.
-
-## User Stories: Stretch Goals (adapt to fit your portfolio's design)
-  DONE: As a visitor, I want to see projects one per row on mobile, so that I can read the detail easily.
-
-## Technical Requirements and Grading Rubric
- - Be sure to use proper `viewport` settings.
- - Use mobile-first design principles when adding CSS.
-TODO: Add new styles in any media queries as needed to make the page look good on desktop screens.
-TODO: For bonus points, include styles for tablet displays, as well as desktop.
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,19 +10,20 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/top_nav.css">
+    <link rel="stylesheet" href="css/modules.css">
     <link rel="stylesheet" href="css/icons.css">
 
     <!-- Handlebars.js: Project Template -->
-    <script id="article-template" type="text/x-handlebars-template">
+    <script id="project-template" type="text/x-handlebars-template">
       <project class="clearfix" data-author="{{author}}" data-category="{{category}}">
           <h1>{{title}}</h1>
           <div class="author">
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
             {{publishStatus}}
           </div>
-            <section class="project-body">{{{body}}}</section>
+          <section class="project-body">{{{body}}}</section>
           <a href="#" class="read-on">Read on &rarr;</a>
-      </article>
+      </project>
     </script>
 
   </head>
@@ -46,25 +31,24 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
     <header class="clearfix">
       <nav>
         <div class="dropdown">
-        <button class="icon-menu"> Menu</button>
+          <button class="icon-menu"> Menu</button>
           <ul class="main-nav">
             <li class="tab" data-content="about"><a href="#">About</a></li>
             <li class="tab" data-content="intro"><a href="#">Intro</a></li>
             <li class="tab" data-content="projects"><a href="#">Projects</a></li>
             <li class="tab" data-content="contact"><a href="#">Contact</a></li>
           </ul>
-          </div>
         </div>
       </nav>
 
       <h1>Project Site for Jeremy Edwards</h1>
     </header>
+
     <main>
       <section id="about" class="tab-content" >
         <h1>About</h1>
         <p>The about section</p>
       </section>
-
 
       <section id="intro" class="tab-content">
         <h1>Introduction</h1>
@@ -72,13 +56,27 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
       </section>
 
       <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <!-- <li>
+              <select id="author-filter">
+                <option value="">-- Filter by Authors --</option>
+              </select>
+            </li> -->
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
         <!--Insert: Handlebars: Project Template -->
       </section>
 
       <section id="contact" class="tab-content">
         <h1>Contact</h1>
         <div class="icon-github">github</div>
-        <div class="icon-email">email</div>
+        <div class="icon-rocket">email</div>
       </section>
     </main>
 
@@ -94,8 +92,9 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
     <script src="proj/data.js"></script>
     <script src="js/buildProjData.js"></script>
     <script src="js/siteFilter.js"></script>
-    <!-- <script src="js/top_nav.js"></script> -->
 
+    <!-- TODO: implement hide menu on click -->
+    <!-- <script src="js/top_nav.js"></script> -->
 
   </body>
 </html>

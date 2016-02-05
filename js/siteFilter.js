@@ -1,30 +1,45 @@
 var projectView = {};
 
 // TODO: Populate the filters
-// projectView.populateFilters = function() {
-//   $('article').each(function() {
-//     if (!$(this).hasClass('template')) {
-//       val = $(this).attr('data-category');
-//       optionTag = '<option value="' + val + '">' + val + '</option>';
-//       if ($('#category-filter option[value="' + val + '"]').length === 0) {
-//         $('#category-filter').append(optionTag);
-//       }
-//     }
-//   });
-// };
-//
-// TODO: add category filter
-// projectView.handleCategoryFilter = function() {
-//   $('#category-filter').on('change', function() {
+projectView.populateFilters = function() {
+  $('project').each(function() {
+    if (!$(this).hasClass('template')) {
+      var val = $(this).find('address a').text();
+      var optionTag = '<option value="' + val + '">' + val + '</option>';
+      $('#author-filter').append(optionTag);
+
+      val = $(this).attr('data-category');
+      optionTag = '<option value="' + val + '">' + val + '</option>';
+      if ($('#category-filter option[value="' + val + '"]').length === 0) {
+        $('#category-filter').append(optionTag);
+      }
+    }
+  });
+};
+
+// projectView.handleAuthorFilter = function() {
+//   $('#author-filter').on('change', function() {
 //     if ($(this).val()) {
-//       $('article').hide();
-//       $('article[data-category="'+ $(this).val() + '"]').fadeIn();
+//       $('project').hide();
+//       $('project[data-author="'+ $(this).val() + '"]').fadeIn();
 //     } else {
-//       $('article[data-category]').show();
+//       $('project[data-author]').show();
 //     }
 //     $('#author-filter').val('');
 //   });
 // };
+
+projectView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('project').hide();
+      $('project[data-category="'+ $(this).val() + '"]').fadeIn();
+    } else {
+      $('project[data-category]').show();
+    }
+    $('#author-filter').val('');
+  });
+};
 
 projectView.handleTopNav = function(e) {
   $('.main-nav').on('click', '.tab' , function(){
@@ -48,13 +63,16 @@ projectView.setTeasers = function() {
 
   $('.read-on').on('click', function(e){
     e.preventDefault();
-    $(this).parent().find('.project-body *:nth-of-type(n)').slideDown('fast');
+
+    // TODO: fix issue with image shrinking on toggle
+    $(this).parent().find('.project-body *:nth-of-type(n)').slideToggle('fast');
   });
 };
 
+
 $(function(){
-  // projectView.populateFilters();
-  // projectView.handleCategoryFilter();
+  projectView.populateFilters();
+  projectView.handleCategoryFilter();
   projectView.setTeasers();
   projectView.handleTopNav();
 });

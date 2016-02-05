@@ -30,6 +30,12 @@ hr {
   width: 80%;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .initHide {
   display: none;
 }
