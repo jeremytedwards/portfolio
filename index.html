@@ -20,15 +20,31 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
     <meta charset="UTF-8">
     <title>Portfolio Site</title>
 
-    <meta name=”viewport” content=”width=device-width, initial-scale=1”>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/top_nav.css">
     <link rel="stylesheet" href="css/icons.css">
+
+    <!-- Handlebars.js: Project Template -->
+    <script id="article-template" type="text/x-handlebars-template">
+      <project class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="author">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            Publication: {{daysAgo}}
+          </div>
+          <section class="project-body">{{body}}</section>
+          <a href="#" class="read-on">Read on &rarr;</a>
+        </header>
+      </article>
+    </script>
+
   </head>
   <body>
-    <header>
+    <header class="clearfix">
       <nav>
         <div class="dropdown">
         <button class="icon-menu"> Menu</button>
@@ -58,13 +74,7 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
 
       <section id="projects" class="tab-content">
         <!--Start: Project Template -->
-        <project class="initHide">
-            <h1>Project Title</h1>
-            <div class="author">First LastName</div>
-            <div class="pubDate">Published <time pubdate datetime="2000-01-01">Pubish Time</time></div>
-            <section class="project-body"></section>
-            <a href="#" class="read-on">Read on &rarr;</a>
-        </project>
+
         <!-- END: Project Template -->
       </section>
 
@@ -83,10 +93,12 @@ TODO: For bonus points, include styles for tablet displays, as well as desktop.
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="proj/data.js"></script>
     <script src="js/buildProjData.js"></script>
     <script src="js/siteFilter.js"></script>
     <!-- <script src="js/top_nav.js"></script> -->
+
 
   </body>
 </html>
