@@ -1,0 +1,10 @@
+#filters {
+  padding: 0;
+  list-style: none;
+}
+
+
+#filters select {
+  width: 90%;
+  margin: .2em 5%;
+}

@@ -3,30 +3,84 @@
   <head>
     <meta charset="UTF-8">
     <title>Portfolio Site</title>
-    <link rel="stylesheet"  href="css/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: untilize responsive framework like foundation -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/top_nav.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/icons.css">
+
+    <!-- Handlebars.js: Project Template -->
+    <script id="project-template" type="text/x-handlebars-template">
+      <project class="clearfix" data-author="{{author}}" data-category="{{category}}">
+          <h1>{{title}}</h1>
+          <div class="author">
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+          <section class="project-body">{{{body}}}</section>
+          <a href="#" class="read-on">Read on &rarr;</a>
+      </project>
+    </script>
+
   </head>
   <body>
-    <main>
-      <!-- header -->
-      <header>
-        <h1>Project Site for Jeremy Edwards</h1>
-        <a href="https://github.com/jeremytedwards/" class="" target="_blank"><img src="img/github_icon.png" height="50px" /></a></li>
-        <a href="mailto:jeremytedwards@gmail.com?subject=Found your cool portfolio!&body=Hi, I found your protfolio and wanted to send you a message let you know that..." class=""><img src="img/mail_icon.png" height="50px" /></a></li>
-      </header>
+    <header class="clearfix">
+      <nav>
+        <div class="dropdown">
+          <button class="icon-menu"> Menu</button>
+          <ul class="main-nav">
+            <li class="tab" data-content="about"><a href="#">About</a></li>
+            <li class="tab" data-content="intro"><a href="#">Intro</a></li>
+            <li class="tab" data-content="projects"><a href="#">Projects</a></li>
+            <li class="tab" data-content="contact"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
 
-      <!-- portfolio -->
-      <section id="projects">
-        <!-- projects to load in here -->
-        <project class="initHide">
-            <h1>Project Title</h1>
-            <div class="author">First LastName</div>
-            <div class="pubDate">Published <time pubdate datetime="2000-01-01">Pubish Time</time></div>
-        </project>
+      <h1>Project Site for Jeremy Edwards</h1>
+    </header>
+
+    <main>
+      <section id="about" class="tab-content" >
+        <h1>About</h1>
+        <p>The about section</p>
+      </section>
+
+      <section id="intro" class="tab-content">
+        <h1>Introduction</h1>
+        <p>This is a little bit about me</p>
+      </section>
+
+      <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <!-- <li>
+              <select id="author-filter">
+                <option value="">-- Filter by Authors --</option>
+              </select>
+            </li> -->
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <!--Insert: Handlebars: Project Template -->
+      </section>
+
+      <section id="contact" class="tab-content">
+        <h1>Contact</h1>
+        <div class="icon-github">github</div>
+        <div class="icon-rocket">email</div>
       </section>
     </main>
 
     <footer>
-      <!-- footer -->
       <section id="footer">
         <p>&copy; 2016 The World Wide Web</p>
       </section>
@@ -34,9 +88,16 @@
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="proj/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="js/marked.js"></script>
     <script src="js/buildProjData.js"></script>
+    <script src="js/siteFilter.js"></script>
 
+    <!-- TODO: implement hide menu on click -->
+    <!-- <script src="js/top_nav.js"></script> -->
+    <script>
+      Project.fetchAll();
+    </script>
 
   </body>
 </html>
