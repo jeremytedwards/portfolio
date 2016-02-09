@@ -49,7 +49,7 @@ projectView.handleTopNav = function(e) {
 
     // if this is the 'projects' tab expand the first project section
     if ($navItem === 'projects') {
-      $('.read-on')[0].click();
+      // $('.read-on')[0].click();
     };
   });
 
@@ -70,9 +70,12 @@ projectView.setTeasers = function() {
 };
 
 
-$(function(){
+projectView.initIndexPage = function() {
+  Project.all.forEach(function(a){
+    $('#projects').append(a.toHtml());
+  });
   projectView.populateFilters();
   projectView.handleCategoryFilter();
   projectView.setTeasers();
   projectView.handleTopNav();
-});
+};
